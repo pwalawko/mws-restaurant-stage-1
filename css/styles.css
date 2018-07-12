@@ -156,7 +156,7 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  min-height: 200px;
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -267,7 +267,7 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
   position: relative;
   width: 85%;
 }
@@ -281,5 +281,23 @@ nav h1 a {
 @media screen and (max-width: 800px) {
   #restaurants-list li {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #breadcrumb {
+    width: 100%;
+  }
+  .inside #map {
+    height: 400px;
+  }
+  #restaurant-container, #reviews-container {
+    width: 100%;
+  }
+  .inside #map-container {
+    position: relative;
+    top: 131px;
+    width: 100%;
+    z-index: 100;
   }
 }
