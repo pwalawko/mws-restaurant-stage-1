@@ -1,10 +1,12 @@
 var filesToCache = [
+  '/',
   '/css/styles.css',
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
   '/index.html',
-  '/restaurant.html'
+  '/restaurant.html',
+  '/img/'
 ];
 
 var staticCacheName = 'pages-cache-v1';
@@ -26,4 +28,21 @@ self.addEventListener('fetch', function(event) {
         return fetch(event.request);
     })
   )
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+        return Promise.all(
+          cacheNames.filter(function (cacheName) {
+            console.log('hello')
+            return cacheName.startsWith('pages-cache')&&
+                cacheName != staticCacheName;
+          }).map(function (cacheName) {
+              return cache.delete(cacheName);
+          })
+        );
+      })
+  );
+
 });
