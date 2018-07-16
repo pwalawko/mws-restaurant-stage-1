@@ -136,6 +136,7 @@ nav h1 a {
   flex-wrap: wrap;
   display: flex;
   background-color: #f3f3f3;
+  justify-content: center;
   list-style: outside none none;
   margin: 0;
   padding: 30px 15px 60px;
@@ -159,7 +160,7 @@ nav h1 a {
   min-height: 200px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;
@@ -276,6 +277,14 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media screen and (max-width: 500px) {
+  .filter-options {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+  }
 }
 
 @media screen and (max-width: 800px) {
